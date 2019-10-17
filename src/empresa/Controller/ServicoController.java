@@ -1,4 +1,4 @@
-package empresa.Servicos;
+package Empresa.Controller;
 
 public class ServicoController {
 }

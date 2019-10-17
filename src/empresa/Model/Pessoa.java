@@ -1,9 +1,9 @@
-package empresa.Model;
+package Empresa.Model;
 
-import empresa.Contato.Contato;
-import empresa.Contato.ContatoController;
-import empresa.Endereco.Endereco;
-import empresa.Endereco.EnderecoController;
+import Empresa.Model.Contato;
+import Empresa.Controller.ContatoController;
+import Empresa.Model.Endereco;
+import Empresa.Controller.EnderecoController;
 
 public abstract class Pessoa {
     private String nome;

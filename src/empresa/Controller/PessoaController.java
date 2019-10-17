@@ -1,4 +1,6 @@
-package empresa.Pessoa;
+package Empresa.Controller;
+
+import Empresa.Model.Pessoa;
 
 import java.util.List;
 

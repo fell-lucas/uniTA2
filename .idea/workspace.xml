@@ -114,6 +114,11 @@
     <property name="recentsLimit" value="5" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\1801560700\Documents\Trabalho2POO\uniTA2\src\Empresa\View" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -146,12 +151,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="empresa.Main" />
+      <option name="MAIN_CLASS_NAME" value="Empresa.Main" />
       <module name="uniTrab2" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="empresa.*" />
+          <option name="PATTERN" value="Empresa.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,7 +215,7 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1571022164593" duration="3269000" />
-      <workItem from="1571265959526" duration="2044000" />
+      <workItem from="1571265959526" duration="4481000" />
     </task>
     <servers />
   </component>

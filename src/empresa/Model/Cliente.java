@@ -1,8 +1,8 @@
-package empresa.Model;
+package Empresa.Model;
 
-import empresa.Contato.Contato;
-import empresa.Endereco.Endereco;
-import empresa.Pessoa.Pessoa;
+import Empresa.Model.Contato;
+import Empresa.Model.Endereco;
+import Empresa.Model.Pessoa;
 
 public class Cliente extends Pessoa {
     public Cliente(String nome, String CPF, String RG, Endereco endereco, Contato contato) {

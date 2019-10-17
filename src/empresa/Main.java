@@ -1,5 +1,6 @@
-package empresa;
+package Empresa;
 
+import Empresa.View.HomeView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +11,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("empresa.fxml"));
-        primaryStage.setTitle("Hello World");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("View/home.fxml"));
+        Parent root = loader.load();
+
+        HomeView homeView = loader.getController();
+
+        primaryStage.setTitle("яблоко");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+
+        homeView.setDataComboBox();
     }
 
 

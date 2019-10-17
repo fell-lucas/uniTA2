@@ -1,4 +1,6 @@
-package empresa.Endereco;
+package Empresa.Controller;
+
+import Empresa.Model.Endereco;
 
 public class EnderecoController {
     private Endereco endereco;
