@@ -1,4 +1,4 @@
-package empresa.Contato;
+package empresa.Model;
 
 import java.util.List;
 

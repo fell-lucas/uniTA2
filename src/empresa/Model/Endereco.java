@@ -1,4 +1,4 @@
-package empresa.Endereco;
+package empresa.Model;
 
 public class Endereco {
     private String logradouro;

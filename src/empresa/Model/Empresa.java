@@ -1,4 +1,4 @@
-package empresa;
+package empresa.Model;
 
 public class Empresa {
 }

@@ -1,4 +1,4 @@
-package empresa.Servicos;
+package empresa.Model;
 
 public class ServicoPrestado {
 }

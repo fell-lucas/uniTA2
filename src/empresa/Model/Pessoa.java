@@ -1,4 +1,4 @@
-package empresa.Pessoa;
+package empresa.Model;
 
 import empresa.Contato.Contato;
 import empresa.Contato.ContatoController;

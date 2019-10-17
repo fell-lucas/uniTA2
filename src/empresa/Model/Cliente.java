@@ -1,4 +1,4 @@
-package empresa.Pessoa.Cliente;
+package empresa.Model;
 
 import empresa.Contato.Contato;
 import empresa.Endereco.Endereco;

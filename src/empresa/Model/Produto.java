@@ -1,4 +1,4 @@
-package empresa.Produto;
+package empresa.Model;
 
 public class Produto {
 }
