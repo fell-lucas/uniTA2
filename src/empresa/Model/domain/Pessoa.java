@@ -1,23 +1,21 @@
-package Empresa.Model;
+package empresa.model.domain;
 
-import Empresa.Model.Contato;
-import Empresa.Controller.ContatoController;
-import Empresa.Model.Endereco;
-import Empresa.Controller.EnderecoController;
+import empresa.model.domain.Contato;
+import empresa.model.domain.Endereco;
 
 public abstract class Pessoa {
     private String nome;
     private String CPF;
     private String RG;
-    private EnderecoController endController;
-    private ContatoController contatoController;
+    private Endereco endereco;
+    private Contato contato;
 
     public Pessoa(String nome, String CPF, String RG, Endereco endereco, Contato contato) {
         this.nome = nome;
         this.CPF = CPF;
         this.RG = RG;
-        this.endController = new EnderecoController(endereco);
-        this.contatoController = new ContatoController(contato);
+        this.endereco = new Endereco(endereco);
+        this.contato = new Contato(contato);
     }
 
     public String getNome() {

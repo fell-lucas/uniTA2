@@ -1,9 +1,6 @@
-package Empresa.View;
+package empresa.controller;
 
-import Empresa.Controller.PessoaController;
-import Empresa.Controller.ServicoController;
-import Empresa.Controller.ServicoPrestadoController;
-import Empresa.Model.Empresa;
+import empresa.model.domain.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

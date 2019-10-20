@@ -1,4 +1,4 @@
-package Empresa.View;
+package empresa.controller;
 
 public class ForgotPw {
 

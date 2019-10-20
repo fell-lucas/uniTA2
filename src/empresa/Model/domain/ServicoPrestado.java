@@ -1,4 +1,4 @@
-package Empresa.Model;
+package empresa.model.domain;
 
 public class ServicoPrestado {
 }

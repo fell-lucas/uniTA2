@@ -1,10 +1,9 @@
-package Empresa.Model;
+package empresa.model.domain;
 
-import Empresa.Model.Pessoa;
-import Empresa.Controller.PessoaController;
-import Empresa.Controller.ServicoController;
-import Empresa.Controller.ServicoPrestadoController;
+import empresa.model.domain.Pessoa;
 import java.util.ArrayList;
+import java.util.List;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,10 +11,10 @@ public class Empresa {
     private int id;
     private String nome;
     private String password;
-    private ServicoController servicos;
-    private PessoaController clientes;
-    private PessoaController funcionarios;
-    private ServicoPrestadoController servicosPrestados;
+    private List<Servico> servicos;
+    private List<Cliente> clientes;
+    private List<Funcionario> funcionarios;
+    private List<ServicoPrestado> servicosPrestados;
 
     public int getId() {
         return id;
@@ -26,7 +25,7 @@ public class Empresa {
     }
 
     // c/ id
-    public Empresa(int id, String nome, ServicoController servicos, PessoaController clientes, PessoaController funcionarios, ServicoPrestadoController servicosPrestados) {
+    public Empresa(int id, String nome, List<Servico> servicos, List<Cliente> clientes, List<Funcionario> funcionarios, List<ServicoPrestado> servicosPrestados) {
         this.id = id;
         this.nome = nome;
         this.servicos = servicos;
@@ -35,7 +34,7 @@ public class Empresa {
         this.servicosPrestados = servicosPrestados;
     }
     // s/ id
-    public Empresa(String nome, ServicoController servicos, PessoaController clientes, PessoaController funcionarios, ServicoPrestadoController servicosPrestados) {
+    public Empresa(String nome, List<Servico> servicos, List<Cliente> clientes, List<Funcionario> funcionarios, List<ServicoPrestado> servicosPrestados) {
         this.nome = nome;
         this.servicos = servicos;
         this.clientes = clientes;
