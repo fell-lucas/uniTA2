@@ -1,4 +1,4 @@
-package empresa.model.domain;
+package Empresa.model.domain;
 
 import Empresa.Model.Contato;
 import Empresa.Model.Endereco;

@@ -1,8 +1,4 @@
-package empresa.model.domain;
-
-import empresa.model.domain.Contato;
-import empresa.model.domain.Endereco;
-import empresa.model.domain.Pessoa;
+package Empresa.model.domain;
 
 public class Funcionario extends Pessoa {
     private double valorHora;

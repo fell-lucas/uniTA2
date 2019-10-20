@@ -1,7 +1,4 @@
-package empresa.model.domain;
-
-import empresa.model.domain.Contato;
-import empresa.model.domain.Endereco;
+package Empresa.model.domain;
 
 public abstract class Pessoa {
     private String nome;
@@ -10,12 +7,12 @@ public abstract class Pessoa {
     private Endereco endereco;
     private Contato contato;
 
-    public Pessoa(String nome, String CPF, String RG, Endereco endereco, Contato contato) {
+    public Pessoa(String nome, String CPF, String RG, Endereco endereco, Contato cont) {
         this.nome = nome;
         this.CPF = CPF;
         this.RG = RG;
-        this.endereco = new Endereco(endereco);
-        this.contato = new Contato(contato);
+        //this.endereco = new Endereco(end);
+        //this.contato = new Contato(cont);
     }
 
     public String getNome() {

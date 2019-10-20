@@ -2,28 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/ContatoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/EmpresaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/EnderecoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/PessoaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/ProdutoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/RelatorioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/ServicoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/ServicoPrestadoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Contato.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Empresa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Endereco.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Funcionario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Pessoa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/Servico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/Model/ServicoPrestado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/View/ForgotPw.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/empresa/View/HomeView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uniTrab2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uniTrab2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/ForgotPw.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Controller/HomeView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Contato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Contato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/Servico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/Servico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/Model/domain/ServicoPrestado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/Model/domain/ServicoPrestado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/View/empresa.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/View/forgotPw.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/View/forgotPw.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/empresa/View/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/empresa/View/home.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

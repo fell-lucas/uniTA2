@@ -1,6 +1,5 @@
-package empresa.model.domain;
+package Empresa.model.domain;
 
-import empresa.model.domain.Pessoa;
 import java.util.ArrayList;
 import java.util.List;
 
