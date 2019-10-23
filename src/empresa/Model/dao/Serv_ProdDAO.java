@@ -6,14 +6,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class Serv_ProdDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Serv_ProdDAO servprod) {
@@ -32,7 +33,7 @@ public class Serv_ProdDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Serv_ProdDAO> listar() {
+    public List<Serv_ProdDAO> listar() {
         return null;
     }
 }

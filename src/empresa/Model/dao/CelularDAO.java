@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class CelularDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Celular celular) {

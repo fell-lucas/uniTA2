@@ -4,17 +4,24 @@ import Empresa.model.InterfaceDAO;
 import Empresa.model.domain.Empresa;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class EmpresaDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Empresa empresa) {
@@ -33,7 +40,23 @@ public class EmpresaDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Empresa> listar() {
-        return null;
+    public List<Empresa> listar() {
+        String sql = "SELECT * FROM empresa";
+        List<Empresa> retorno = new ArrayList<>();
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet resultado = stmt.executeQuery();
+            while (resultado.next()) {
+                Empresa empresa = new Empresa();
+                empresa.setId(resultado.getInt("id"));
+                empresa.setNome(resultado.getString("nome"));
+                //cliente.setCpf(resultado.getString("cpf"));
+                //cliente.setTelefone(resultado.getString("telefone"));
+                retorno.add(empresa);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpresaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return retorno;
     }
 }

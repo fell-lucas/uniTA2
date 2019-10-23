@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class ClienteDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Cliente cliente) {
@@ -33,7 +34,7 @@ public class ClienteDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Cliente> listar() {
+    public List<Cliente> listar() {
         return null;
     }
 }

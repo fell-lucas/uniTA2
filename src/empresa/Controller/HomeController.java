@@ -1,7 +1,12 @@
 package Empresa.Controller;
 
 import Empresa.Main;
+import Empresa.model.dao.EmpresaDAO;
+import Empresa.model.database.Database;
+import Empresa.model.database.DatabaseFactory;
 import Empresa.model.domain.Empresa;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +19,8 @@ import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
@@ -23,14 +30,28 @@ public class HomeController implements Initializable {
     @FXML
     private PasswordField senhaEmpresa;
     @FXML
-    private ComboBox<Object> empresaComboBox;
+    private ComboBox<Empresa> empresaComboBox;
+
+    private List<Empresa> listEmpresas;
+    private ObservableList<Empresa> observableListEmpresas;
+
+    //Atributos para manipulação de Banco de Dados
+    private final Database database = DatabaseFactory.getDatabase("mysql");
+    private final Connection connection = database.conectar();
+    private final EmpresaDAO empresaDAO = new EmpresaDAO();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        empresaComboBox.getItems().addAll(new Object(), new Object());
+        empresaDAO.setConnection(connection);
+        listEmpresas = empresaDAO.listar();
+
+        observableListEmpresas = FXCollections.observableArrayList(listEmpresas);
+        //empresaComboBox.setItems(observableListEmpresas);
+        empresaComboBox.getItems().addAll(observableListEmpresas);
+        filter();
         empresaComboBox.valueProperty().addListener((obs, oldval, newval) -> {
             if (newval != null)
-                System.out.println(newval.getClass());
+                System.out.println(newval.getId());
         });
     }
 
@@ -47,7 +68,7 @@ public class HomeController implements Initializable {
     }
 
     //mostra o nome da empresa
-    /*private void filter() {
+    private void filter() {
         empresaComboBox.setConverter(new StringConverter<Empresa>() {
             @Override
             public String toString(Empresa object) {
@@ -65,7 +86,7 @@ public class HomeController implements Initializable {
                         .orElse(null);
             }
         });
-    }*/
+    }
 
     public void handleLogin(ActionEvent actionEvent) {
         //TODO validação do usuário com o banco de dados

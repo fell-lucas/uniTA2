@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class FuncionarioDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Funcionario func) {
@@ -33,7 +34,7 @@ public class FuncionarioDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Funcionario> listar() {
+    public List<Funcionario> listar() {
         return null;
     }
 }

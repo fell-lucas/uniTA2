@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class PessoaDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Pessoa pess) {
@@ -33,7 +34,7 @@ public class PessoaDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Pessoa> listar() {
+    public List<Pessoa> listar() {
         return null;
     }
 }

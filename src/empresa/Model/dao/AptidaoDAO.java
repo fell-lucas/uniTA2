@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class AptidaoDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Apto apto) {
@@ -33,7 +34,7 @@ public class AptidaoDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Apto> listar() {
+    public List<Apto> listar() {
         return null;
     }
 

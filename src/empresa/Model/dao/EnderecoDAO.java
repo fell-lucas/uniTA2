@@ -7,14 +7,15 @@ import java.sql.Connection;
 import java.util.List;
 
 public class EnderecoDAO implements InterfaceDAO {
+    private Connection connection;
     @Override
     public Connection getConnection() {
-        return null;
+        return connection;
     }
 
     @Override
     public void setConnection(Connection connection) {
-
+        this.connection = connection;
     }
 
     public boolean inserir(Endereco end) {
@@ -33,7 +34,7 @@ public class EnderecoDAO implements InterfaceDAO {
         return null;
     }
 
-    protected List<Endereco> listar() {
+    public List<Endereco> listar() {
         return null;
     }
 }
