@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 public class EmpresaDAO implements InterfaceDAO {
     private Connection connection;
+
     @Override
     public Connection getConnection() {
         return connection;
@@ -25,7 +26,18 @@ public class EmpresaDAO implements InterfaceDAO {
     }
 
     public boolean inserir(Empresa empresa) {
-        return false;
+        String sql = "INSERT INTO empresa(nome, email, senha) VALUES(?,?,?)";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, empresa.getNome());
+            stmt.setString(2, empresa.getEmail());
+            stmt.setString(3, empresa.getSenha());
+            stmt.execute();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 
     public boolean alterar(Empresa empresa) {

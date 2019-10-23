@@ -44,7 +44,6 @@ public class HomeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         empresaDAO.setConnection(connection);
         listEmpresas = empresaDAO.listar();
-
         observableListEmpresas = FXCollections.observableArrayList(listEmpresas);
         //empresaComboBox.setItems(observableListEmpresas);
         empresaComboBox.getItems().addAll(observableListEmpresas);
@@ -54,7 +53,6 @@ public class HomeController implements Initializable {
                 System.out.println(newval.getId());
         });
     }
-
     /**
      * Carrega o arquivo fxml e define a scene (View)
      * @throws IOException
@@ -101,4 +99,8 @@ public class HomeController implements Initializable {
     public void handleForgotPw(ActionEvent actionEvent) throws IOException {
         ForgotPwController.showView();
     }
+
+    //public void refresh(ActionEvent actionEvent) {
+     //   initialize(null, null);
+    //}
 }
