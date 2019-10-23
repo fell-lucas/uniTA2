@@ -1,18 +1,23 @@
 package Empresa.model.domain;
 
-public abstract class Pessoa {
+import java.io.Serializable;
+
+public abstract class Pessoa implements Serializable {
+    private int id;
     private String nome;
     private String CPF;
     private String RG;
+    private String email;
     private Endereco endereco;
-    private Contato contato;
+    private Celular celular;
 
-    public Pessoa(String nome, String CPF, String RG, Endereco endereco, Contato cont) {
+    public Pessoa(int id, String nome, String CPF, String RG) {
         this.nome = nome;
         this.CPF = CPF;
         this.RG = RG;
-        //this.endereco = new Endereco(end);
-        //this.contato = new Contato(cont);
+    }
+
+    public Pessoa() {
     }
 
     public String getNome() {
@@ -37,5 +42,37 @@ public abstract class Pessoa {
 
     public void setRG(String RG) {
         this.RG = RG;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Celular getCelular() {
+        return celular;
+    }
+
+    public void setCelular(Celular celular) {
+        this.celular = celular;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

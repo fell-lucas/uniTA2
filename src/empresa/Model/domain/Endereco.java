@@ -1,6 +1,9 @@
 package Empresa.model.domain;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable {
+    private int id;
     private String logradouro;
     private String numero;
     private String complemento;
@@ -9,14 +12,17 @@ public class Endereco {
     private String estado;
     private String CEP;
 
-    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String estado, String CEP) {
+    public Endereco(int id,String logradouro, String numero, String bairro, String cidade, String estado) {
+        this.id = id;
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
-        this.CEP = CEP;
+    }
+
+    public Endereco() {
     }
 
     public String getLogradouro() {

@@ -1,5 +1,5 @@
 
-package javafxmvc.model.database;
+package Empresa.model.database;
 
 import java.sql.Connection;
 

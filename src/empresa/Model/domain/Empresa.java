@@ -1,19 +1,18 @@
 package Empresa.model.domain;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-public class Empresa {
+public class Empresa implements Serializable {
     private int id;
     private String nome;
-    private String password;
+    private String email;
+    private String senha;
     private List<Servico> servicos;
     private List<Cliente> clientes;
     private List<Funcionario> funcionarios;
     private List<ServicoPrestado> servicosPrestados;
+    private List<Produto> estoque;
 
     public int getId() {
         return id;
@@ -23,43 +22,77 @@ public class Empresa {
         return nome;
     }
 
-    // c/ id
-    public Empresa(int id, String nome, List<Servico> servicos, List<Cliente> clientes, List<Funcionario> funcionarios, List<ServicoPrestado> servicosPrestados) {
+    public Empresa(int id, String nome,String email,String senha) {
         this.id = id;
         this.nome = nome;
-        this.servicos = servicos;
-        this.clientes = clientes;
-        this.funcionarios = funcionarios;
-        this.servicosPrestados = servicosPrestados;
+        this.email = email;
+        this.senha = senha;
     }
-    // s/ id
-    public Empresa(String nome, List<Servico> servicos, List<Cliente> clientes, List<Funcionario> funcionarios, List<ServicoPrestado> servicosPrestados) {
-        this.nome = nome;
-        this.servicos = servicos;
-        this.clientes = clientes;
-        this.funcionarios = funcionarios;
-        this.servicosPrestados = servicosPrestados;
-    }
-
-    private ObservableList<String> list;
 
     public Empresa() {
-        list = FXCollections.observableArrayList(new ArrayList<String>());
     }
 
-    public void add(String string) {
-        list.add(string);
+    public List<Produto> getEstoque() {
+        return estoque;
     }
 
-    public void edit(String string, String toEdit) {
-        list.set(list.indexOf(toEdit), string);
+    public void setEstoque(List<Produto> estoque) {
+        this.estoque = estoque;
     }
 
-    public void delete(String toDelete) {
-        list.remove(toDelete);
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public ObservableList<String> getList() {
-        return list;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public List<Servico> getServicos() {
+        return servicos;
+    }
+
+    public void setServicos(List<Servico> servicos) {
+        this.servicos = servicos;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public List<ServicoPrestado> getServicosPrestados() {
+        return servicosPrestados;
+    }
+
+    public void setServicosPrestados(List<ServicoPrestado> servicosPrestados) {
+        this.servicosPrestados = servicosPrestados;
     }
 }

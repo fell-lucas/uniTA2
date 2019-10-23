@@ -1,6 +1,7 @@
 package Empresa.Controller;
 
 import Empresa.Main;
+import Empresa.model.domain.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
+import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.net.URL;
