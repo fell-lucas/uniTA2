@@ -1,7 +1,7 @@
-package Empresa.model.dao;
+package Empresa.Model.dao;
 
-import Empresa.model.InterfaceDAO;
-import Empresa.model.domain.Celular;
+import Empresa.Model.InterfaceDAO;
+import Empresa.Model.domain.Celular;
 
 import java.sql.Connection;
 import java.util.List;

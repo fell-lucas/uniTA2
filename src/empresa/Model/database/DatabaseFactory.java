@@ -1,4 +1,4 @@
-package Empresa.model.database;
+package Empresa.Model.database;
 
 public class DatabaseFactory {
     public static Database getDatabase(String nome){

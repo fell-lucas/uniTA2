@@ -1,4 +1,4 @@
-package Empresa.model.domain;
+package Empresa.Model.domain;
 
 import java.io.Serializable;
 import java.util.List;

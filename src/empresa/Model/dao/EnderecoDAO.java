@@ -1,7 +1,7 @@
-package Empresa.model.dao;
+package Empresa.Model.dao;
 
-import Empresa.model.InterfaceDAO;
-import Empresa.model.domain.Endereco;
+import Empresa.Model.InterfaceDAO;
+import Empresa.Model.domain.Endereco;
 
 import java.sql.Connection;
 import java.util.List;

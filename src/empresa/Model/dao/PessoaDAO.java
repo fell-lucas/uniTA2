@@ -1,7 +1,7 @@
-package Empresa.model.dao;
+package Empresa.Model.dao;
 
-import Empresa.model.InterfaceDAO;
-import Empresa.model.domain.Pessoa;
+import Empresa.Model.InterfaceDAO;
+import Empresa.Model.domain.Pessoa;
 
 import java.sql.Connection;
 import java.util.List;

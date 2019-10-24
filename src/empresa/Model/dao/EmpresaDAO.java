@@ -1,7 +1,9 @@
-package Empresa.model.dao;
+package Empresa.Model.dao;
 
-import Empresa.model.InterfaceDAO;
-import Empresa.model.domain.Empresa;
+import Empresa.Exception.CadastroException;
+import Empresa.Exception.LoginInvalidoException;
+import Empresa.Model.InterfaceDAO;
+import Empresa.Model.domain.Empresa;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,18 +27,22 @@ public class EmpresaDAO implements InterfaceDAO {
         this.connection = connection;
     }
 
-    public boolean inserir(Empresa empresa) {
-        String sql = "INSERT INTO empresa(nome, email, senha) VALUES(?,?,?)";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, empresa.getNome());
-            stmt.setString(2, empresa.getEmail());
-            stmt.setString(3, empresa.getSenha());
-            stmt.execute();
-            return true;
-        } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
+    public boolean inserir(Empresa empresa) throws CadastroException {
+        if (buscar(empresa).getEmail()==null) {
+            String sql = "INSERT INTO empresa(nome, email, senha) VALUES(?,?,?)";
+            try {
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setString(1, empresa.getNome());
+                stmt.setString(2, empresa.getEmail());
+                stmt.setString(3, empresa.getSenha());
+                stmt.execute();
+                return true;
+            } catch (SQLException ex) {
+                Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+                return false;
+            }
+        }else{
+            throw new CadastroException("Email ja existente.");
         }
     }
 
@@ -49,7 +55,25 @@ public class EmpresaDAO implements InterfaceDAO {
     }
 
     public Empresa buscar(Empresa empresa) {
-        return null;
+        String sql = "SELECT * FROM empresa WHERE email=?";
+        Empresa retorno = new Empresa();
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, empresa.getEmail());
+            ResultSet resultado = stmt.executeQuery();
+            if (resultado.next()) {
+                Empresa empRetorno = new Empresa();
+                empRetorno.setId(resultado.getInt("id"));
+                empRetorno.setNome(resultado.getString("nome"));
+                empRetorno.setEmail(resultado.getString("email"));
+                empRetorno.setSenha(resultado.getString("senha"));
+                retorno = empRetorno;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpresaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return retorno;
+
     }
 
     public List<Empresa> listar() {
@@ -71,4 +95,21 @@ public class EmpresaDAO implements InterfaceDAO {
         }
         return retorno;
     }
+
+    public boolean login(Empresa empresa) throws LoginInvalidoException {
+        Empresa empBD = buscar(empresa);
+        System.out.println(empBD.getSenha());
+        System.out.println(empresa.getSenha());
+        if (empBD.getEmail() != null) {
+            if (empresa.getSenha().equals(empBD.getSenha())) {
+                return true;
+            } else {
+                throw new LoginInvalidoException("Senha inválida.");
+            }
+        } else {
+            throw new LoginInvalidoException("Email inexistente.");
+        }
+    }
+
+
 }

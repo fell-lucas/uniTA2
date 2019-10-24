@@ -1,7 +1,6 @@
-package Empresa.model;
+package Empresa.Model;
 
 import java.sql.Connection;
-import java.util.List;
 
 public interface InterfaceDAO {
     public Connection getConnection();

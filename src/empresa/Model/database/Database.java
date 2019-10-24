@@ -1,5 +1,5 @@
 
-package Empresa.model.database;
+package Empresa.Model.database;
 
 import java.sql.Connection;
 

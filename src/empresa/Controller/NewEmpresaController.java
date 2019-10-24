@@ -1,10 +1,11 @@
 package Empresa.Controller;
 
+import Empresa.Exception.CadastroException;
 import Empresa.Main;
-import Empresa.model.dao.EmpresaDAO;
-import Empresa.model.database.Database;
-import Empresa.model.database.DatabaseFactory;
-import Empresa.model.domain.Empresa;
+import Empresa.Model.dao.EmpresaDAO;
+import Empresa.Model.database.Database;
+import Empresa.Model.database.DatabaseFactory;
+import Empresa.Model.domain.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -55,9 +56,24 @@ public class NewEmpresaController implements Initializable {
             empresa.setNome(nomeEmpresa.getText());
             empresa.setEmail(emailEmpresa.getText());
             empresa.setSenha(senhaEmpresa.getText());
-            empresaDAO.inserir(empresa);
-            HomeController.showView();
+            try {
+                empresaDAO.inserir(empresa);
+                limpaCampos();
+                HomeController.showView();
+            } catch (CadastroException e) {
+                alerta(e.getMessage());
+            }
         }
+    }
+    private void limpaCampos() {
+        nomeEmpresa.clear();
+        emailEmpresa.clear();
+        senhaEmpresa.clear();
+    }
+    private void alerta(String texto){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(texto);
+        alert.show();
     }
     private boolean validarEntradaDeDados() {
         String errorMessage = "";
