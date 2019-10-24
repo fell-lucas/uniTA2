@@ -32,7 +32,7 @@ public class ForgotPwController implements Initializable {
     }
 
     public void handleReturn(ActionEvent actionEvent) throws IOException {
-        HomeController.showView();
+        LoginController.showView();
     }
 
 }

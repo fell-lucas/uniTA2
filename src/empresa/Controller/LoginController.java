@@ -6,8 +6,6 @@ import Empresa.Model.database.Database;
 import Empresa.Model.database.DatabaseFactory;
 import Empresa.Model.dao.EmpresaDAO;
 import Empresa.Model.domain.Empresa;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,18 +13,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class HomeController implements Initializable {
+public class LoginController implements Initializable {
     //scene individual do controller, 1 ctrl = 1 view
     private static Scene scene;
 
@@ -49,7 +44,7 @@ public class HomeController implements Initializable {
      * @throws IOException
      */
     public static void showView() throws IOException {
-        Parent root = FXMLLoader.load(HomeController.class.getResource("../View/home.fxml"));
+        Parent root = FXMLLoader.load(LoginController.class.getResource("../View/login.fxml"));
         if(scene == null)
             scene = new Scene(root, 300, 275);
         Main.stage.setTitle("Login");
@@ -57,7 +52,6 @@ public class HomeController implements Initializable {
     }
 
     public void handleLogin(ActionEvent actionEvent) {
-        //TODO validação do usuário com o banco de dados
         if(validarLogin()){
             Empresa empresa = new Empresa();
             empresa.setEmail(emailEmpresa.getText());
@@ -97,7 +91,6 @@ public class HomeController implements Initializable {
         alert.show();
     }
     public void handleNewacc(ActionEvent actionEvent) throws IOException {
-        //TODO criação do usuário no banco de dados
         NewEmpresaController.showView();
     }
 

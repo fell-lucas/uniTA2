@@ -120,6 +120,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -287,7 +288,7 @@
       <workItem from="1571265959526" duration="4481000" />
       <workItem from="1571598815073" duration="2214000" />
       <workItem from="1571801309237" duration="9044000" />
-      <workItem from="1571868482048" duration="6186000" />
+      <workItem from="1571868482048" duration="7879000" />
     </task>
     <servers />
   </component>

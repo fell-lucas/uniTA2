@@ -1,6 +1,6 @@
 package Empresa;
 
-import Empresa.Controller.HomeController;
+import Empresa.Controller.LoginController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -9,7 +9,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        HomeController.showView();
+        LoginController.showView();
         stage.show();
     }
 

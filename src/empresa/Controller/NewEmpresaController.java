@@ -59,7 +59,7 @@ public class NewEmpresaController implements Initializable {
             try {
                 empresaDAO.inserir(empresa);
                 limpaCampos();
-                HomeController.showView();
+                LoginController.showView();
             } catch (CadastroException e) {
                 alerta(e.getMessage());
             }
@@ -102,6 +102,6 @@ public class NewEmpresaController implements Initializable {
     }
 
     public void handleReturn(ActionEvent actionEvent) throws IOException {
-        HomeController.showView();
+        LoginController.showView();
     }
 }
